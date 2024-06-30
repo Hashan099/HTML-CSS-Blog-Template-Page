@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+  /* Primary Colors */
+  --moderate-violet: hsl(263, 55%, 52%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+
+  /* Neutral */
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(209, 60%, 91%);
+}
+
+/* General Styles */
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: var(--light-grayish-blue);
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 1rem;
+  padding: 0.5rem;
+  min-height: 100vh;
+}
+
+/* Grid Item Styles */
+.grid-item {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: var(--light-grayish-blue);
+}
+
+.grid-item__header img {
+  border-radius: 50%;
+  border: 2px solid var(--white);
+}
+
+.grid-item__header h3 {
+  font-size: 1.5rem;
+  color: var(--light-grayish-blue);
+}
+
+.grid-item__summary {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.grid-item__description {
+  font-size: 1rem;
+  color: var(--white);
+  text-align: justify;
+  letter-spacing: 0.1rem;
+  margin-top: 2rem;
+}
+
+/* Specific Item Styles */
+.item-1 {
+  background-color: var(--moderate-violet);
+  background-image: url("/images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  grid-column: span 2;
+}
+
+.item-2 {
+  background-color: var(--very-dark-grayish-blue);
+}
+
+.item-3 {
+  background-color: var(--moderate-violet);
+  background-image: url("/images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  grid-row: span 2;
+}
+
+.item-4 {
+  background-color: var(--very-dark-blackish-blue);
+}
+
+.item-5 {
+  background-color: var(--very-dark-grayish-blue);
+  grid-column: span 2;
+}
+
+/* Media Query Mobile View */
+@media (max-width: 768px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill, auto);
+    gap: 1rem;
+    row-gap: 2rem;
+  }
+
+  .grid-item {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
